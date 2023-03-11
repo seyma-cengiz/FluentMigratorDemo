@@ -2,6 +2,7 @@
 
 namespace FluentMigratorDemo.Migrations
 {
+    //the id specified in attibute, must be unique and int64
     [Migration(230311113412)]
     public class Migration_230311113412 : Migration
     {

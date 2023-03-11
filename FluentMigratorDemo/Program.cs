@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+//adding FM service
 builder.Services.AddFluentMigratorService();
 
 builder.Services.AddControllers();
@@ -15,6 +16,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+//running FM service
 app.Migrate();
 
 // Configure the HTTP request pipeline.
