@@ -18,17 +18,17 @@ Commonly, this identifier is just an incrementing value, although the attribute 
 
 After adding and configuring the FluentMigratorCore service, you can realize on MigrateUp() method the VersionInfo table is created in the database if it's not created before. 
 
-![version info create console](src/version-info-create.png)
-![version info create table](src/version-info-table.png)
+<img src="https://github.com/seyma-cengiz/FluentMigratorDemo/blob/master/FluentMigratorDemo/src/version-info-table.png" height="100"/>
+<img src="https://github.com/seyma-cengiz/FluentMigratorDemo/blob/master/FluentMigratorDemo/src/version-info-create.png" height="350"/>
 
 Then it's gonna start to scan classes and choose the classes which is not runned yet by checking incrementally specified id. You can also watch it in the console all this steps.
 
-![migration console](src/migration.png)
+<img src="https://github.com/seyma-cengiz/FluentMigratorDemo/blob/master/FluentMigratorDemo/src/migration.png" height="500"/>
 
 The VersionInfo table is the table which holds the information of the runned classes.
+
 <b>Version:</b> refers to unique Id that specified in [Migration("{id}")] attribute for each classes.
-<b>AppliedOn:</b> holds the timestamp when the class was run.
-<b>Description</b> keeps the description info specified in [Migration("{id}, {description}")] attribute. if it's not defined it'll be written class name as default.
+<br><b>AppliedOn:</b> holds the timestamp when the class was run.
+<br><b>Description</b> keeps the description info specified in [Migration("{id}, {description}")] attribute. if it's not defined it'll be written class name as default.
 
-![version info table](src/version-info-data.png)
-
+<img src="https://github.com/seyma-cengiz/FluentMigratorDemo/blob/master/FluentMigratorDemo/src/version-info-data.png" height="80"/>
