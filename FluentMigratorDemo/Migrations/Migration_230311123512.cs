@@ -16,6 +16,9 @@ namespace FluentMigratorDemo.Migrations
                           	""Description"" text NULL,
                           	CONSTRAINT ""Categories_pkey"" PRIMARY KEY (""Id"")
                           );");
+
+            //for running embedded sql file, you can choose EmbeddedScript. don't forget to specify build action of file as Embedded resource from Properties.
+            Execute.EmbeddedScript("FluentMigratorDemo.Scripts.InsertCategories.sql");
         }
     }
 }
