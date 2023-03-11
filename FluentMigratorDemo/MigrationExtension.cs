@@ -8,11 +8,13 @@ namespace FluentMigratorDemo
         public static void AddFluentMigratorService(this IServiceCollection service)
         {
             service.AddFluentMigratorCore()
+                   //for seeing logs in the console
                    .AddLogging(conf => conf.AddFluentMigratorConsole())
                    .ConfigureRunner(conf =>
                    {
                        conf.AddPostgres()
-                           .WithGlobalConnectionString("{enter-connection-string}")
+                           .WithGlobalConnectionString("{connection-string}")
+                           // defining which directory the FM would scan to run the classes
                            .ScanIn(Assembly.GetExecutingAssembly()).For.All();
                    });
         }
