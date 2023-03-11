@@ -13,7 +13,7 @@ namespace FluentMigratorDemo
                    .ConfigureRunner(conf =>
                    {
                        conf.AddPostgres()
-                           .WithGlobalConnectionString("{connection-string}")
+                           .WithGlobalConnectionString("Server=localhost;port=5432;Database=FluentMigratorDemo;User Id=postgres;Password=admin;Pooling=true;Maximum Pool Size=300;")
                            // defining which directory the FM would scan to run the classes
                            .ScanIn(Assembly.GetExecutingAssembly()).For.All();
                    });
